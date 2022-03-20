@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{32C3BDE6-E125-3128-82C1-25D0441455A3}</ProjectGuid>
+    <ProjectGuid>{8B74F1FF-9916-02CB-C676-6853258D8D3A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -57,10 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\CameraFollow.cs" />
-    <Compile Include="Assets\TopDownController.cs" />
     <Compile Include="Assets\Bullet.cs" />
+    <Compile Include="Assets\TopDownController.cs" />
     <Compile Include="Assets\EnemyController.cs" />
     <Compile Include="Assets\EnemyWalker.cs" />
+    <Compile Include="Assets\IDamageble.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

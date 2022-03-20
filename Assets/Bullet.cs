@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public int bulletPower;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +18,7 @@ public class Bullet : MonoBehaviour
     {
         if(collision.gameObject.GetComponent<EnemyWalker>() != null)
         {
+            collision.gameObject.GetComponent<EnemyController>().Damage(bulletPower);
             Debug.Log("ouch");
         }
         Destroy(gameObject);

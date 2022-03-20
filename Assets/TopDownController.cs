@@ -2,15 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TopDownController : MonoBehaviour
+public class TopDownController : MonoBehaviour,IDamageable<int>
 {
+    public int health = 5;
+    public int attackPower = 2;
     private Camera mainCamera;
     public float moveSpeed = 15f;
     private Rigidbody thisRigidbody;
     private Vector3 moveInput;
     private Vector3 moveVelocity;
     public Transform bulletHole;
-    public Rigidbody bulletInstance;
+    public GameObject bulletInstance;
    
     // Start is called before the first frame update
     void Start()
@@ -29,8 +31,10 @@ public class TopDownController : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            Rigidbody shotInstance = Instantiate(bulletInstance, bulletHole.position, Quaternion.identity);
-            shotInstance.velocity = transform.forward * 8;
+            GameObject shotInstance = Instantiate(bulletInstance, bulletHole.position, Quaternion.identity);
+            shotInstance.GetComponent<Bullet>().bulletPower = attackPower;
+            shotInstance.GetComponent<Rigidbody>().velocity = transform.forward * 8;
+
         }
           
     }
@@ -51,6 +55,20 @@ public class TopDownController : MonoBehaviour
             transform.LookAt(new Vector3 (pointToLook.x,transform.position.y,pointToLook.z));
         }
         
+    }
+
+    public void Damage(int damage)
+    {
+        health -= damage;
+        if(health <= 0)
+        {
+            Kill();
+        }
+    }
+
+    public void Kill()
+    {
+        Destroy(gameObject);
     }
     
 }
