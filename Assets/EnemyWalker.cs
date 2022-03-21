@@ -4,5 +4,7 @@ using UnityEngine;
 
 public class EnemyWalker : EnemyController
 {
-  
+  void Update(){
+      
+  }
 }
