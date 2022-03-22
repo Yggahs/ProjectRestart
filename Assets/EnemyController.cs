@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour,IDamageable<int>
 {   
     public int health = 5;
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +15,7 @@ public class EnemyController : MonoBehaviour,IDamageable<int>
     // Update is called once per frame
     void Update()
     {
+       
         
     }
 
@@ -30,4 +32,6 @@ public class EnemyController : MonoBehaviour,IDamageable<int>
     {
         Destroy(gameObject);
     }
+
+    
 }
